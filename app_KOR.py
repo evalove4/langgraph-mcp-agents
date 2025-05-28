@@ -492,7 +492,8 @@ with st.sidebar:
         )
 
     # OpenAI API 키 확인
-    has_openai_key = os.environ.get("OPENAI_API_KEY") is not None
+    # has_openai_key = os.environ.get("OPENAI_API_KEY") is not None
+    has_openai_key = st.secrets["OPENAI_API_KEY"] is not None
     if has_openai_key:
         available_models.extend(["gpt-4o", "gpt-4o-mini"])
 
