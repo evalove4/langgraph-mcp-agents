@@ -32,6 +32,8 @@ from langchain_core.runnables import RunnableConfig
 # Load environment variables (get API keys and settings from .env file)
 load_dotenv(override=True)
 
+OPENAI_API_KEY=st.secrets["OPENAI_API_KEY"]
+
 # config.json file path setting
 CONFIG_FILE_PATH = "config.json"
 
@@ -493,7 +495,7 @@ with st.sidebar:
     available_models = []
 
     # Check Anthropic API key
-    has_anthropic_key = os.environ.get("ANTHROPIC_API_KEY") is not None
+    has_anthropic_key = os..get("ANTHROPIC_API_KEY") is not None
     if has_anthropic_key:
         available_models.extend(
             [
@@ -504,7 +506,7 @@ with st.sidebar:
         )
 
     # Check OpenAI API key
-    has_openai_key = os.environ.get("OPENAI_API_KEY") is not None
+    has_openai_key = st.secrets["OPENAI_API_KEY"] is not None
     if has_openai_key:
         available_models.extend(["gpt-4o", "gpt-4o-mini"])
 
