@@ -495,7 +495,7 @@ with st.sidebar:
     available_models = []
 
     # Check Anthropic API key
-    has_anthropic_key = os..get("ANTHROPIC_API_KEY") is not None
+    has_anthropic_key = os.get("ANTHROPIC_API_KEY") is not None
     if has_anthropic_key:
         available_models.extend(
             [
